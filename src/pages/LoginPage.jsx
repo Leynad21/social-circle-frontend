@@ -23,7 +23,7 @@ const LoginPage = () => {
 
     useEffect(() => {
         if (isError) {
-            toast.error(message)
+            toast.error("Credentials not valid")
         }
 
         if (isSuccess || user) {

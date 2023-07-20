@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify"
 
-const BACKEND_DOMAIN = "http://localhost:8000"
+const BACKEND_DOMAIN = "https://socialcircleapp.onrender.com"
 
 const PROFILE_URL = `${BACKEND_DOMAIN}/api/v1/profile/me/`
 const UPDATE_PROFILE_URL = `${BACKEND_DOMAIN}/api/v1/profile/update/`
