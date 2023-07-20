@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* General Styles */
+
+:root {
+  --some-color: aquamarine
+}
+
+
+body {
+  background-color: #f5f5f5;
+}
