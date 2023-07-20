@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from "react-toastify"
 import { FaUser } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
-import { register, reset } from '../features/auth/authSlice'
+import { register, resetUser } from '../features/auth/authSlice'
 import Spinner from '../components/utils/Spinner'
 
 const RegisterPage = () => {
@@ -38,7 +38,6 @@ const RegisterPage = () => {
 
         if (password !== re_password) {
             toast.error("Passwords do not match")
-            toast.error(message)
         } else {
             const userData = {
                 username,
@@ -64,7 +63,7 @@ const RegisterPage = () => {
             // window.location.reload()
         }
 
-        dispatch(reset())
+        dispatch(resetUser())
 
     }, [isError, isSuccess, message, user, navigate, dispatch])
 
