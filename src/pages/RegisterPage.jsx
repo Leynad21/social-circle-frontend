@@ -56,7 +56,7 @@ const RegisterPage = () => {
 
     useEffect(() => {
         if (isError) {
-            toast.error("Password not strong enough")
+            toast.error(message)
         }
 
         if (isSuccess || user) {
