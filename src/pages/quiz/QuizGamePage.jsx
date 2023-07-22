@@ -75,10 +75,15 @@ const QuizGamePage = () => {
     return (
         <div>
             <div className="flex flex-col items-center ">
-                <h1 className="text-4xl font-semibold mt-12">Play Quiz</h1>
-                <p className="text-xl font-semibold text-gray-600 m-4 mb-8">
-                    {quiz.title}
-                </p>
+                <h1 className="text-4xl font-semibold mt-4">Play Quiz</h1>
+                <div className='flex justify-between lg:w-[800px]'>
+                    <p className="text-xl font-semibold text-gray-600 m-4 mb-4">
+                        <h1>{quiz.title}</h1>
+                    </p>
+                    <p className="text-xl font-semibold text-gray-600 m-4 mb-8">
+                        <h2>Created by:&nbsp;{quiz.author_username}</h2>
+                    </p>
+                </div>
 
                 {/* QUESTIONS */}
                 {questionsArray.length > 0 && (
@@ -90,8 +95,9 @@ const QuizGamePage = () => {
                             </h1>
                         </div>
                         <div className="p-4">
-                            <h1 className="text-2xl flex items-center">
-                                <span>{currentQuestion + 1}: </span> {questionsArray[currentQuestion].title}
+                            <h1 className="text-2xl flex">
+                                <span>{currentQuestion + 1}: &nbsp; </span>
+                                <span>{questionsArray[currentQuestion].title}</span>
                             </h1>
                             <h2 className="text-xl mt-12 mb-4">Options:</h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8 mb-8">
@@ -113,18 +119,18 @@ const QuizGamePage = () => {
                 {/* END OF QUESTIONS */}
                 <div className="join">
                     <button
-                        className="join-item btn btn-outline"
+                        className="join-item btn btn-outline w-24"
                         onClick={() => setCurrentQuestion((prevQuestion) => prevQuestion - 1)}
                         disabled={currentQuestion === 0}
                     >
-                        Previous page
+                        Previous
                     </button>
                     {[...Array(questionsArray.length)].map((_, index) => {
                         if (index === 0 || index === questionsArray.length - 1 || Math.abs(index - currentQuestion) <= 1) {
                             return (
                                 <input
                                     key={index}
-                                    className="join-item btn btn-square border-black  "
+                                    className="join-item btn btn-square border-black hidden sm:flex "
                                     type="radio"
                                     name="options"
                                     aria-label={index + 1}
@@ -140,7 +146,7 @@ const QuizGamePage = () => {
                         return null;
                     })}
                     <button
-                        className="join-item btn btn-outline border-l-0"
+                        className="join-item btn btn-outline w-24"
                         onClick={() => setCurrentQuestion((prevQuestion) => prevQuestion + 1)}
                         disabled={currentQuestion === questionsArray.length - 1}
                     >

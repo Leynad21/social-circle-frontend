@@ -14,3 +14,13 @@
 body {
   background-color: #f5f5f5;
 }
+
+/* // Custom Classes // */
+
+.custom-select {
+  overflow-wrap: break-word;
+  width: 10rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -58,10 +58,10 @@ const MyQuizzesPage = () => {
 
     return (
         <>
-            <div className=' m-8'>
+            <div className='m-8'>
                 <div className='flex justify-between'>
                     <h1 className=' text-3xl mt-8'>{profile.first_name}'s Quizzes</h1>
-                    <button className="btn btn-accent btn-lg" onClick={() => window.my_modal_2.showModal()}>Create New Quiz</button>
+                    <button className="btn btn-accent sm:btn-lg" onClick={() => window.my_modal_2.showModal()}>Create New Quiz</button>
                     <dialog id="my_modal_2" className="modal">
                         <form method="dialog" className="modal-box">
                             <h3 className="font-bold text-lg mb-8">Create New Quiz</h3>
@@ -74,9 +74,9 @@ const MyQuizzesPage = () => {
                     </dialog>
                 </div>
                 <div className="flex justify-center items-center">
-                    <div className='mt-20 grid lg:grid-cols-2 gap-28 lg:gap-48 '>
+                    <div className='mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-48 sm:grid-cols-1 md:grid-cols-1 '>
                         {myQuizzes.map((quiz) => (
-                            <div key={quiz.id} className="card w-96 bg-base-100 shadow-xl">
+                            <div key={quiz.id} className="card w-60 sm:w-96 bg-base-100 shadow-xl">
                                 <div className="card-body">
                                     <h2 className="card-title">{quiz.title}</h2>
                                     <div className="card-actions justify-end mt-8">

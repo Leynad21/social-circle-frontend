@@ -47,16 +47,19 @@ const NavBar = () => {
     }, [dispatch, user]);
 
     return (
-        <nav className=' flex justify-between bg-blue-600 text-xl px-8 py-4 text-white w-full'>
+        <nav className=' flex justify-between bg-blue-600 px-8 py-4 text-white w-full text-xs sm:text-xl'>
             <div>
-                <NavLink to="/" className=' ease-in duration-200 hover:text-blue-200'> Home</NavLink>
+                <NavLink to="/" className=' ease-in duration-200 hover:text-blue-200 pr-2'> Home</NavLink>
             </div>
             <div className='flex gap-8'>
                 {user ?
                     <>
                         <NavLink to="/dashboard" className=' hover:text-blue-200 ease-in duration-200'> Dashboard </NavLink>
                         <NavLink to="/my-profile" className=' hover:text-blue-200 ease-in duration-200'> My profile </NavLink>
-                        <button className='btn btn-sm' onClick={handleLogout} ><FaSignInAlt className='mr-4' /> Logout</button>
+                        <button className='btn btn-sm' onClick={handleLogout}>
+                            <FaSignInAlt className='mr-4' />
+                            <span className='hidden sm:inline pr-[-10px]'>Logout</span>
+                        </button>
                     </>
                     :
                     <>

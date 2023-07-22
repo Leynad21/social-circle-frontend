@@ -29,11 +29,11 @@ const DashboardPage = () => {
 
     return (
         <>
-            <div className=' m-8'>
-                <h1 className=' text-3xl mt-8'>Welcome, {profile.first_name}</h1>
+            <div className='m-8'>
+                <h1 className='text-3xl mt-8'>Welcome, {profile.first_name}</h1>
                 <div className="flex justify-center items-center">
-                    <div className='mt-20 grid lg:grid-cols-2 gap-28 lg:gap-48 '>
-                        <div className="card w-96 h-[450px] bg-base-100 shadow-xl duration-300 hover:scale-105">
+                    <div className='mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-48 sm:grid-cols-2 md:grid-cols-2'>
+                        <div className="card w-full lg:w-96 h-[450px] bg-base-100 shadow-xl duration-300 hover:scale-105">
                             <figure><img src={cardsAgainstHumanityImg} alt="cards-against-humanity" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">Cards Againsts Humanity</h2>
@@ -43,7 +43,7 @@ const DashboardPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="card w-96 h-[450px] bg-base-100 shadow-xl duration-300 hover:scale-105">
+                        <div className="card w-full lg:w-96 h-[450px] bg-base-100 shadow-xl duration-300 hover:scale-105">
                             <figure><img src={quizImg} alt="quiz" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">Quiz</h2>

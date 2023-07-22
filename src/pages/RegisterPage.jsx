@@ -38,6 +38,9 @@ const RegisterPage = () => {
 
         if (password !== re_password) {
             toast.error("Passwords do not match")
+        }
+        else if (password.length < 8) {
+            toast.error("Password too weak. Try a stronger one with at least 8 characters (letters & numbers)")
         } else {
             const userData = {
                 username,

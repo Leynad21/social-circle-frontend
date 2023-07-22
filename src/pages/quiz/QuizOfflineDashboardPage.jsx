@@ -61,11 +61,11 @@ const QuizOfflineDashboardPage = () => {
                 <figure className='mt-8'><img src={quizImg} alt="quiz" className='rounded-xl h-96' /></figure>
                 <div className='mt-12 flex gap-8'>
                     <div>
-                        <select value={selectedOption.slug} onChange={handleSelect} className="btn btn-primary">
-                            <option value="">Select quiz</option>
+                        <select value={selectedOption.slug} onChange={handleSelect} className="btn btn-primary custom-select">
+                            <option className='custom-select-options' value="">Select quiz</option>
                             {quizzesLocal.map((quiz) => {
                                 return (
-                                    <option key={quiz.id} value={quiz.slug}>{quiz.title}</option>
+                                    <option key={quiz.id} value={quiz.slug}>{quiz.title}-{quiz.author_username}</option>
                                 )
                             })}
                         </select>
