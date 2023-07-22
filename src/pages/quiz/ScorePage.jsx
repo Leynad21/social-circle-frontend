@@ -32,15 +32,30 @@ const ScorePage = () => {
                     <h2 className="text-2xl font-bold mb-4">{quiz.title}</h2>
                     <p className="text-lg">Total Answers: {quizScore.totalAnswers}</p>
                     <p className="text-lg">Correct Answers: {quizScore.correctAnswers}</p>
-                    <p className="text-lg">Correct Answers: {Math.round((quizScore.correctAnswers / quizScore.totalAnswers) * 100)}%</p>
+                    <p className="text-lg">Score: {Math.round((quizScore.correctAnswers / quizScore.totalAnswers) * 100)}%</p>
                 </div>
-                <div className="p-4 bg-gray-100">
-                    <Link
-                        to="/dashboard"
-                        className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
-                    >
-                        Close
-                    </Link>
+                <div className="flex bg-gray-100">
+                    <div className="p-4" >
+                        <Link
+                            to="/dashboard"
+                            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300">
+                            Close
+                        </Link>
+                    </div>
+                    <div className="p-4 ">
+                        <Link
+                            to={`/quiz/play/${params.slug}`}
+                            className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition duration-300">
+                            Retry
+                        </Link>
+                    </div>
+                    <div className="p-4">
+                        <Link
+                            to={`/quiz/answers/${params.slug}`}
+                            className="px-4 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600 transition duration-300">
+                            Check answers
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
